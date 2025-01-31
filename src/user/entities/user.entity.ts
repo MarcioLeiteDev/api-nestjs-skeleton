@@ -12,6 +12,9 @@ export class User {
     @Column({ unique: true })
     email: string;
 
+    @Column({ default: 'user' }) // Pode ser "admin", "user", "moderator", etc.
+    role: string;
+
     @Column()
     password: string;
     @BeforeInsert()
